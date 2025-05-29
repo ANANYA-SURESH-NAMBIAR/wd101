@@ -4,9 +4,9 @@ window.onload = function () {
   const mm = String(today.getMonth() + 1).padStart(2, "0");
   const dd = String(today.getDate()).padStart(2, "0");
   //min 18 years (upper bound)
-  const maxDate = `${yyyy - 18}-${mm}-${dd}`;
+  const maxDate = `${dd}-${mm}-${yyyy-18}`;
   //max 55 years (lower bound)
-  const minDate = `${yyyy - 55}-${mm}-${dd}`;
+  const minDate = `${dd}-${mm}-${yyyy-55}`;
   const dobInput = document.getElementById("dob");
   dobInput.setAttribute("max", maxDate);
   dobInput.setAttribute("min", minDate);
