@@ -33,7 +33,7 @@ form.addEventListener("submit", (event) => {
 function validAge(dob) {
   const dobDate = new Date(dob);
   const today = new Date();
-  const age = today.getFullYear() - dobDate.getFullYear();
+  let age = today.getFullYear() - dobDate.getFullYear();
   const m = today.getMonth() - dobDate.getMonth();
   const d = today.getDate() - dobDate.getDate();
   if (m < 0 || (m === 0 && d<0 )) {
