@@ -10,6 +10,7 @@ window.onload = function () {
   const dobInput = document.getElementById("dob");
   dobInput.setAttribute("max", maxDate);
   dobInput.setAttribute("min", minDate);
+  displayEntries();
 };
 const form = document.querySelector("#regisForm");
 form.addEventListener("submit", (event) => {
