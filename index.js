@@ -35,8 +35,8 @@ function validAge(dob) {
   const today = new Date();
   const age = today.getFullYear() - dobDate.getFullYear();
   const m = today.getMonth() - dobDate.getMonth();
-  //const d = today.getDate() - dobDate.getDate();
-  if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+  const d = today.getDate() - dobDate.getDate();
+  if (m < 0 || (m === 0 && d<0 )) {
     age--;
   }
   return age >= 18 && age <= 55;
