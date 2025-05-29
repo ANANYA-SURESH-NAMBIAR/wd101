@@ -31,7 +31,8 @@ form.addEventListener("submit", (event) => {
   displayEntries();
 });
 function validAge(dob) {
-  const dobDate = new Date(dob);
+  const [year, month, day] = dob.split("-").map(Number);
+  const dobDate = new Date(year, month - 1, day);
   const today = new Date();
   let age = today.getFullYear() - dobDate.getFullYear();
   const m = today.getMonth() - dobDate.getMonth();
