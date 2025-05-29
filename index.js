@@ -31,13 +31,12 @@ form.addEventListener("submit", (event) => {
   displayEntries();
 });
 function validAge(dob) {
-  const [year, month, day] = dob.split("-").map(Number);
-  const dobDate = new Date(year, month - 1, day);
+  const dobDate = new Date(dob);
   const today = new Date();
-  let age = today.getFullYear() - dobDate.getFullYear();
+  const age = today.getFullYear() - dobDate.getFullYear();
   const m = today.getMonth() - dobDate.getMonth();
   const d = today.getDate() - dobDate.getDate();
-  if (m < 0 || (m === 0 && d<0 )) {
+  if (m < 0 || (m === 0 && d < 0)) {
     age--;
   }
   return age >= 18 && age <= 55;
